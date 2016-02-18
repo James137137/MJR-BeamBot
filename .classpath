@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/MJRLe/Dropbox/Source Codes/Java Workspace/MJR Beam Library/target/MJR Beam Library v1.0.0-Build8.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MJR Beam Library"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

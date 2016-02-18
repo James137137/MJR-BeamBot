@@ -2,6 +2,8 @@ package com.mjr.mjrbot;
 
 import java.util.concurrent.ExecutionException;
 
+import javax.swing.JOptionPane;
+
 import com.mjr.mjrbeam.MJR_BeamBot;
 
 public class MJRBot extends MJR_BeamBot {
@@ -15,7 +17,9 @@ public class MJRBot extends MJR_BeamBot {
 
 	public static void joinChannel(String channel) throws InterruptedException, ExecutionException {
 		bot.setdebug(true);
-		bot.connect(channel, AccountSettings.username, AccountSettings.password);
+		String response = JOptionPane.showInputDialog
+				(null,"AuthCode (leave blank if you dont use two factor authentication):");
+		bot.connect(channel, AccountSettings.username, AccountSettings.password, response);
 		if (bot.isConnected() && bot.isAuthenticated()) {
 			Client_GUI.TextToConsole("MJRBot is Connected & Authenticated to Beam!", null);
 			//bot.sendMessage("MJRBot Connected!");
