@@ -1,0 +1,7 @@
+bin/
+<<<<<<< HEAD
+.settings/
+=======
+.metadata/
+>>>>>>> bfba31ec4690086a2e274357125320e3af0c3718
+src/com/mjr/mjrbot/AccountSettings.java
