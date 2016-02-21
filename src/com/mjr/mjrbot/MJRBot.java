@@ -23,6 +23,7 @@ public class MJRBot extends MJR_BeamBot {
 		if (bot.isConnected() && bot.isAuthenticated()) {
 			Client_GUI.TextToConsole("MJRBot is Connected & Authenticated to Beam!", null);
 			//bot.sendMessage("MJRBot Connected!");
+			Client_GUI.updateViewersGUI();
 		}
 	}
 
@@ -43,11 +44,13 @@ public class MJRBot extends MJR_BeamBot {
 	protected void onJoin(String sender) {
 		Client_GUI.TextToConsole(sender + " has joined!", null);
 		bot.addViewer(sender);
+		Client_GUI.updateViewersGUI();
 	}
 
 	@Override
 	protected void onPart(String sender) {
 		Client_GUI.TextToConsole(sender + " has left!", null);
 		bot.removeViewer(sender);
+		Client_GUI.updateViewersGUI();
 	}
 }

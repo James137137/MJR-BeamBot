@@ -32,8 +32,6 @@ public class Client_GUI extends JFrame implements ActionListener {
 	private JScrollPane scrollPaneViewers;
 	public static JTextArea viewers;
 
-	public static UpdateGUIThread thread = new UpdateGUIThread();
-
 	public Client_GUI() {
 		super("MJR Bot - Beam Version"); // Jframe title
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,8 +95,6 @@ public class Client_GUI extends JFrame implements ActionListener {
 				} catch (InterruptedException | ExecutionException e) {
 					e.printStackTrace();
 				}
-				if (!thread.isAlive())
-					thread.start();
 				connect.setText("Leave Channel");
 				channel.setEnabled(false);
 			} else {
@@ -135,5 +131,15 @@ public class Client_GUI extends JFrame implements ActionListener {
 			console.setCaretPosition(console.getDocument().getLength());
 			return;
 		}
+	}
+	public static void updateViewersGUI() {
+		Client_GUI.viewerstext.setText("Viewer List: " + MJRBot.bot.getViewers().size());
+		Client_GUI.viewers.setText("");
+		for (int i = 0; i < MJRBot.bot.getViewers().size(); i++) {
+			Client_GUI.viewers.append(MJRBot.bot.getViewers().get(
+					i)
+					+ "\n");
+		}
+		Client_GUI.viewers.setCaretPosition(0);
 	}
 }
