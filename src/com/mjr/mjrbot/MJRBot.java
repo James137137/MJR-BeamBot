@@ -33,11 +33,7 @@ public class MJRBot extends MJR_BeamBot {
 
 	@Override
 	protected void onMessage(String sender, String message) {
-		System.out.println("here");
 		Client_GUI.TextToConsole(message, sender);
-		if(message.equalsIgnoreCase("test")){
-			bot.deleteUserMessages(sender);
-		}
 	}
 
 	@Override
